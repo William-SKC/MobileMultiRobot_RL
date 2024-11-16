@@ -21,43 +21,57 @@ class Agent(nn.Module):
         super().__init__()
 
         self.network = nn.Sequential(
-            self._layer_init(nn.Conv2d(4, 32, 3, padding=1)),
-            nn.MaxPool2d(2),
+            self._layer_init(nn.Conv2d(4, 32, 3, padding=1)), 
+            # Conv2d(in_channels, out_channels, kernel_size) 
+            # Input channels refer to the number of different "layers" or "depth" of information in the input data. 
+            # 3-layer because of RGB image input
+            # output dim = (input_dim+paddingx2-kernel)/strip +1
+            # Ex: Input Shape: (1, 3, 64, 64), Output Shape: (1, 32, 64, 64)
+            nn.MaxPool2d(2), #  Output Shape: (1, 32, 32, 32)
             nn.ReLU(),
             self._layer_init(nn.Conv2d(32, 64, 3, padding=1)),
-            nn.MaxPool2d(2),
+            nn.MaxPool2d(2), #  Output Shape: (1, 64, 16, 16)
             nn.ReLU(),
             self._layer_init(nn.Conv2d(64, 128, 3, padding=1)),
-            nn.MaxPool2d(2),
+            nn.MaxPool2d(2), #  Output Shape: (1, 128, 8, 8)
             nn.ReLU(),
             nn.Flatten(),
             self._layer_init(nn.Linear(128 * 8 * 8, 512)),
             nn.ReLU(),
         )
+        # actor: Linear layer after self.network mapping from 512 hidden units to num_actions, representing the policy’s output.
         self.actor = self._layer_init(nn.Linear(512, num_actions), std=0.01)
+        # critic: Linear layer after self.network mapping from 512 hidden units to a single value, representing the value of current state: V(s).
         self.critic = self._layer_init(nn.Linear(512, 1))
 
+
+    # A custom method to initialize layers.
     def _layer_init(self, layer, std=np.sqrt(2), bias_const=0.0):
-        torch.nn.init.orthogonal_(layer.weight, std)
-        torch.nn.init.constant_(layer.bias, bias_const)
+        torch.nn.init.orthogonal_(layer.weight, std) # initializes weights Tensor as an orthogonal matrix, scaled by std.
+        torch.nn.init.constant_(layer.bias, bias_const) # Fill the bias Tensor with the bias_const value 
         return layer
 
     def get_value(self, x):
-        return self.critic(self.network(x / 255.0))
+        return self.critic(self.network(x / 255.0)) # normalized x --> Network --> ctiric layer
 
     def get_action_and_value(self, x, action=None):
         hidden = self.network(x / 255.0)
         logits = self.actor(hidden)
-        probs = Categorical(logits=logits)
+        probs = Categorical(logits=logits) # Creates a categorical distribution variable
         if action is None:
             action = probs.sample()
         return action, probs.log_prob(action), probs.entropy(), self.critic(hidden)
 
 
+
+# PZ style is the dictionary-based format used by PettingZoo for managing multi-agent environment data
+
 def batchify_obs(obs, device):
     """Converts PZ style observations to batch of torch arrays."""
-    # convert to list of np arrays
-    obs = np.stack([obs[a] for a in obs], axis=0)
+    # Converts observations to a batch of torch tensors.
+    # convert to list of np arrays 
+    # obs[a].shape: (height, width, channel)
+    obs = np.stack([obs[a] for a in obs], axis=0) 
     # transpose to be (batch, channel, height, width)
     obs = obs.transpose(0, -1, 1, 2)
     # convert to torch
@@ -101,6 +115,9 @@ if __name__ == "__main__":
     env = pistonball_v6.parallel_env(
         render_mode="rgb_array", continuous=False, max_cycles=max_cycles
     )
+    # Discrete action: 0 to move down, 1 to stay still, and 2 to move up
+    # one agent = one piston
+
     env = color_reduction_v0(env)
     env = resize_v1(env, frame_size[0], frame_size[1])
     env = frame_stack_v1(env, stack_size=stack_size)
@@ -111,32 +128,43 @@ if __name__ == "__main__":
     """ LEARNER SETUP """
     agent = Agent(num_actions=num_actions).to(device)
     optimizer = optim.Adam(agent.parameters(), lr=0.001, eps=1e-5)
+    print("num_agents: ", num_agents)
+    # why only use one agent??
 
     """ ALGO LOGIC: EPISODE STORAGE"""
     end_step = 0
     total_episodic_return = 0
+    #rb: replay buffer
     rb_obs = torch.zeros((max_cycles, num_agents, stack_size, *frame_size)).to(device)
-    rb_actions = torch.zeros((max_cycles, num_agents)).to(device)
+    # stack size refers to the number of consecutive frames (or observations) that are "stacked" together to create a single input for the agent. 
+    # the * before frame_size is unpacking the dimensions in frame_size so that they fit correctly into the tuple of dimensions.
+    # what about RGB channel??
+    rb_actions = torch.zeros((max_cycles, num_agents)).to(device) # Replay Buffer for Actions: rb_actions.shape = (125, 5)
     rb_logprobs = torch.zeros((max_cycles, num_agents)).to(device)
+    # Replay Buffer for Log-Probabilities: only stores the log-probabilities of the actions actually taken by the agents
     rb_rewards = torch.zeros((max_cycles, num_agents)).to(device)
-    rb_terms = torch.zeros((max_cycles, num_agents)).to(device)
+    # Replay Buffer for Rewards: Stores the reward received by each agent at each step
+    rb_terms = torch.zeros((max_cycles, num_agents)).to(device) 
+    # Replay Buffer for Termination Flags: A termination flag is 1 if the episode has ended for an agent (e.g., it reached a terminal state), otherwise 0
     rb_values = torch.zeros((max_cycles, num_agents)).to(device)
+    # Replay Buffer for Value Estimates V(s)
 
     """ TRAINING LOGIC """
     # train for n number of episodes
     for episode in range(total_episodes):
         # collect an episode
         with torch.no_grad():
+            # no_grad: disable gradient calculations during data collection, making the process more efficient in terms of memory and speed.
             # collect observations and convert to batch of torch tensors
             next_obs, info = env.reset(seed=None)
             # reset the episodic return
-            total_episodic_return = 0
+            total_episodic_return = 0 # Tracks the cumulative reward across the episod
 
             # each episode has num_steps
             for step in range(0, max_cycles):
                 # rollover the observation
-                obs = batchify_obs(next_obs, device)
-
+                obs = batchify_obs(next_obs, device) # Converts the observations from PettingZoo’s dictionary format to a batched tensor format
+ 
                 # get action from the agent
                 actions, logprobs, _, values = agent.get_action_and_value(obs)
 
@@ -162,6 +190,7 @@ if __name__ == "__main__":
                     break
 
         # bootstrap value if not done
+        # bootstrapping is used to calculate the advantage and return values for each timestep within an episode
         with torch.no_grad():
             rb_advantages = torch.zeros_like(rb_rewards).to(device)
             for t in reversed(range(end_step)):
@@ -182,6 +211,8 @@ if __name__ == "__main__":
         b_advantages = torch.flatten(rb_advantages[:end_step], start_dim=0, end_dim=1)
 
         # Optimizing the policy and value network
+        # PPO: https://spinningup.openai.com/en/latest/algorithms/ppo.html 
+        # This code is using PPO2
         b_index = np.arange(len(b_obs))
         clip_fracs = []
         for repeat in range(3):
@@ -235,8 +266,8 @@ if __name__ == "__main__":
                 loss = pg_loss - ent_coef * entropy_loss + v_loss * vf_coef
 
                 optimizer.zero_grad()
-                loss.backward()
-                optimizer.step()
+                loss.backward() # loss is a tensor from NN
+                optimizer.step() # optimizer update parameter based on the loss/gradient stored at the NN
 
         y_pred, y_true = b_values.cpu().numpy(), b_returns.cpu().numpy()
         var_y = np.var(y_true)
