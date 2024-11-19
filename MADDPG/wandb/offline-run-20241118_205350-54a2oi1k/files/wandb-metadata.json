@@ -1,0 +1,38 @@
+{
+  "os":  "macOS-15.1-arm64-arm-64bit",
+  "python":  "3.11.8",
+  "startedAt":  "2024-11-19T04:53:50.443694Z",
+  "program":  "/Users/shengkangchen/Documents/MADDPG-pettingzoo-pytorch/main.py",
+  "codePath":  "main.py",
+  "git":  {
+    "remote":  "https://github.com/RahulBoipai/MADDPG-pettingzoo-pytorch.git",
+    "commit":  "7ac4c1047ebb3b0cb86fb0b757b925fb512d8c1e"
+  },
+  "root":  "/Users/shengkangchen/Documents/MADDPG-pettingzoo-pytorch",
+  "host":  "Shengkangs-MacBook-Pro.local",
+  "username":  "shengkangchen",
+  "executable":  "/opt/anaconda3/envs/pettingzoo_m4/bin/python",
+  "codePathLocal":  "main.py",
+  "cpu_count":  14,
+  "cpu_count_logical":  14,
+  "disk":  {
+    "/":  {
+      "total":  "994662584320",
+      "used":  "86018822144"
+    }
+  },
+  "memory":  {
+    "total":  "38654705664"
+  },
+  "cpu":  {
+    "count":  14,
+    "countLogical":  14
+  },
+  "apple":  {
+    "name":  "Apple M4 Max",
+    "ecpuCores":  4,
+    "pcpuCores":  10,
+    "gpuCores":  32,
+    "memoryGb":  36
+  }
+}

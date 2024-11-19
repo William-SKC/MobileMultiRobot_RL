@@ -1,0 +1,15 @@
+{"time":"2024-11-18T16:22:30.867917-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-18T16:22:30.867946-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MADDPG-pettingzoo-pytorch/wandb/offline-run-20241118_162230-ffwlm6m7/logs/debug-core.log"}
+{"time":"2024-11-18T16:22:30.975476-08:00","level":"INFO","msg":"created new stream","id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:30.975503-08:00","level":"INFO","msg":"stream: started","id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:30.975524-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:30.975527-08:00","level":"INFO","msg":"handler: started","stream_id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:30.975544-08:00","level":"INFO","msg":"sender: started","stream_id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:30.981045-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-18T16:22:38.812544-08:00","level":"INFO","msg":"stream: closing","id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:38.812652-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-18T16:22:38.813314-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-18T16:22:38.813469-08:00","level":"INFO","msg":"handler: closed","stream_id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:38.813482-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:38.813497-08:00","level":"INFO","msg":"sender: closed","stream_id":"ffwlm6m7"}
+{"time":"2024-11-18T16:22:38.813708-08:00","level":"INFO","msg":"stream: closed","id":"ffwlm6m7"}
