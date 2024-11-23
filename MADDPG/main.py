@@ -68,10 +68,11 @@ if __name__ == '__main__':
 
     #create environment for experiment
     env, dim_info = get_env(args.env_name, args.episode_length)
+    print("dim_info: ", dim_info)
     
     # model
     maddpg = MADDPG(dim_info, args.buffer_capacity, args.batch_size, args.actor_lr, args.critic_lr,
-                    result_dir)
+                    result_dir, vis = False)
 
     """Start Training"""
     experiment_name = f"MADDPG_{args.env_name}_batch_size_{args.batch_size}"
@@ -90,11 +91,12 @@ if __name__ == '__main__':
             step += 1
             if step < args.random_steps:
                 action = {agent_id: env.action_space(agent_id).sample() for agent_id in env.agents} # to get experience
-                
             else:
                 action = maddpg.select_action(obs) #using policy
 
             next_obs, reward, done, _, info = env.step(action)
+            # /opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/pettingzoo/utils/conversions.py 
+            # step function from class aec_to_parallel_wrapper
             # print('next_obs',next_obs)
             # print('reward',reward)
             # print(1)

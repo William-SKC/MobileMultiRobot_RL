@@ -40,7 +40,6 @@ if __name__ == '__main__':
             next_states, rewards, dones, _, infos = env.step(actions)
 
             #frame_list.append(Image.fromarray(env.render(mode='rgb_array')))
-            
             frame_list.append(Image.fromarray(env.render()))
 
             states = next_states

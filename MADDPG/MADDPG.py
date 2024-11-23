@@ -3,10 +3,12 @@ import os
 import pickle
 
 import numpy as np
+import math
 import torch
 import torch.nn.functional as F
 
 from Agent import Agent
+from Agent_vis import Agent_vis
 from Buffer import Buffer
 
 
@@ -28,15 +30,21 @@ def setup_logger(filename):
 class MADDPG:
     """A MADDPG(Multi Agent Deep Deterministic Policy Gradient) agent"""
 
-    def __init__(self, dim_info, capacity, batch_size, actor_lr, critic_lr, res_dir):
+    def __init__(self, dim_info, capacity, batch_size, actor_lr, critic_lr, res_dir, vis = False):
         # sum all the dims of each agent to get input dim for critic
         global_obs_act_dim = sum(sum(val) for val in dim_info.values())
         # create Agent(actor-critic) and replay buffer for each agent
         self.agents = {}
         self.buffers = {}
-        
+        self.vis = vis
+        print('dim_info: ', len(dim_info))
         for agent_id, (obs_dim, act_dim) in dim_info.items():
-            self.agents[agent_id] = Agent(obs_dim, act_dim, global_obs_act_dim, actor_lr, critic_lr)
+            if self.vis:
+                vis_width = int(math.sqrt(obs_dim/4))
+                print('obs_dim: ', global_obs_act_dim, obs_dim, vis_width)
+                self.agents[agent_id] = Agent_vis(vis_width, act_dim, len(dim_info), actor_lr, critic_lr)
+            else:
+                self.agents[agent_id] = Agent(obs_dim, act_dim, global_obs_act_dim, actor_lr, critic_lr)
             self.buffers[agent_id] = Buffer(capacity, obs_dim, act_dim, 'cpu')
         self.dim_info = dim_info
 
@@ -48,14 +56,14 @@ class MADDPG:
         # NOTE that the experience is a dict with agent name as its key
 
         for agent_id in obs.keys():
-            o = obs[agent_id]
+            o = obs[agent_id].flatten()
             a = action[agent_id]
             if isinstance(a, int):
                 # the action from env.action_space.sample() is int, we have to convert it to onehot
                 a = np.eye(self.dim_info[agent_id][1])[a]
 
             r = reward[agent_id]
-            next_o = next_obs[agent_id]
+            next_o = next_obs[agent_id].flatten()
             d = done[agent_id]
             self.buffers[agent_id].add(o, a, r, next_o, d)
 
