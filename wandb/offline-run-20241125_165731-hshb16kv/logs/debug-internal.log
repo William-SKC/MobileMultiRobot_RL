@@ -1,0 +1,15 @@
+{"time":"2024-11-25T16:57:31.552446-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-25T16:57:31.552513-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241125_165731-hshb16kv/logs/debug-core.log"}
+{"time":"2024-11-25T16:57:31.660597-08:00","level":"INFO","msg":"created new stream","id":"hshb16kv"}
+{"time":"2024-11-25T16:57:31.660624-08:00","level":"INFO","msg":"stream: started","id":"hshb16kv"}
+{"time":"2024-11-25T16:57:31.660661-08:00","level":"INFO","msg":"handler: started","stream_id":"hshb16kv"}
+{"time":"2024-11-25T16:57:31.660648-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"hshb16kv"}
+{"time":"2024-11-25T16:57:31.660669-08:00","level":"INFO","msg":"sender: started","stream_id":"hshb16kv"}
+{"time":"2024-11-25T16:57:31.664771-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-25T16:57:52.67809-08:00","level":"INFO","msg":"stream: closing","id":"hshb16kv"}
+{"time":"2024-11-25T16:57:52.678155-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-25T16:57:52.678771-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-25T16:57:52.678881-08:00","level":"INFO","msg":"handler: closed","stream_id":"hshb16kv"}
+{"time":"2024-11-25T16:57:52.678887-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hshb16kv"}
+{"time":"2024-11-25T16:57:52.678889-08:00","level":"INFO","msg":"sender: closed","stream_id":"hshb16kv"}
+{"time":"2024-11-25T16:57:52.67907-08:00","level":"INFO","msg":"stream: closed","id":"hshb16kv"}

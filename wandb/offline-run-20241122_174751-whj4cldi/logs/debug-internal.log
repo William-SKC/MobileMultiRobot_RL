@@ -1,0 +1,15 @@
+{"time":"2024-11-22T17:47:51.501361-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-22T17:47:51.501406-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241122_174751-whj4cldi/logs/debug-core.log"}
+{"time":"2024-11-22T17:47:51.610361-08:00","level":"INFO","msg":"created new stream","id":"whj4cldi"}
+{"time":"2024-11-22T17:47:51.610389-08:00","level":"INFO","msg":"stream: started","id":"whj4cldi"}
+{"time":"2024-11-22T17:47:51.610425-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"whj4cldi"}
+{"time":"2024-11-22T17:47:51.610408-08:00","level":"INFO","msg":"handler: started","stream_id":"whj4cldi"}
+{"time":"2024-11-22T17:47:51.610451-08:00","level":"INFO","msg":"sender: started","stream_id":"whj4cldi"}
+{"time":"2024-11-22T17:47:51.614852-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T17:47:54.165036-08:00","level":"INFO","msg":"stream: closing","id":"whj4cldi"}
+{"time":"2024-11-22T17:47:54.165103-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T17:47:54.165386-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T17:47:54.165599-08:00","level":"INFO","msg":"handler: closed","stream_id":"whj4cldi"}
+{"time":"2024-11-22T17:47:54.165603-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"whj4cldi"}
+{"time":"2024-11-22T17:47:54.165604-08:00","level":"INFO","msg":"sender: closed","stream_id":"whj4cldi"}
+{"time":"2024-11-22T17:47:54.165728-08:00","level":"INFO","msg":"stream: closed","id":"whj4cldi"}

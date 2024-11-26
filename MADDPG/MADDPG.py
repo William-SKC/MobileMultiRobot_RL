@@ -40,9 +40,9 @@ class MADDPG:
         print('dim_info: ', len(dim_info))
         for agent_id, (obs_dim, act_dim) in dim_info.items():
             if self.vis:
-                vis_width = int(math.sqrt(obs_dim/4))
-                print('obs_dim: ', global_obs_act_dim, obs_dim, vis_width)
-                self.agents[agent_id] = Agent_vis(vis_width, act_dim, len(dim_info), actor_lr, critic_lr)
+                self.vis_width = int(math.sqrt(obs_dim/4))
+                print('obs_dim: ', global_obs_act_dim, obs_dim, self.vis_width)
+                self.agents[agent_id] = Agent_vis(self.vis_width, act_dim, len(dim_info), actor_lr, critic_lr)
             else:
                 self.agents[agent_id] = Agent(obs_dim, act_dim, global_obs_act_dim, actor_lr, critic_lr)
             self.buffers[agent_id] = Buffer(capacity, obs_dim, act_dim, 'cpu')
@@ -54,7 +54,6 @@ class MADDPG:
 
     def add(self, obs, action, reward, next_obs, done):
         # NOTE that the experience is a dict with agent name as its key
-
         for agent_id in obs.keys():
             o = obs[agent_id].flatten()
             a = action[agent_id]
@@ -78,12 +77,18 @@ class MADDPG:
         obs, act, reward, next_obs, done, next_act = {}, {}, {}, {}, {}, {}
         for agent_id, buffer in self.buffers.items():
             o, a, r, n_o, d = buffer.sample(indices)
+            # print('sample: ', o.shape, n_o.shape, a.shape, batch_size) # TODO: reshape to tensor (1,C,H,W) for vis
+            if self.vis:
+                n_o = torch.reshape(n_o, (batch_size, 4, self.vis_width, self.vis_width))
+                o = torch.reshape(o, (batch_size, 4, self.vis_width, self.vis_width))
             obs[agent_id] = o
             act[agent_id] = a
             reward[agent_id] = r
             next_obs[agent_id] = n_o
             done[agent_id] = d
             # calculate next_action using target_network and next_state
+            # if self.vis:
+            #     n_o = torch.reshape(n_o, 4, self.vis_width, self.vis_width)
             next_act[agent_id] = self.agents[agent_id].target_action(n_o)
 
         return obs, act, reward, next_obs, done, next_act
@@ -91,7 +96,10 @@ class MADDPG:
     def select_action(self, obs):
         actions = {}
         for agent, o in obs.items():
-            o = torch.from_numpy(o).unsqueeze(0).float()
+            if self.vis:
+                o = torch.from_numpy(o).permute(2, 0, 1).unsqueeze(0).float() # numpy (H,W,C) to tensor (1,C,H,W)
+            else:
+                o = torch.from_numpy(o).unsqueeze(0).float()
             a = self.agents[agent].action(o)  # torch.Size([1, action_size])
             # NOTE that the output is a tensor, convert it to int before input to the environment
             actions[agent] = a.squeeze(0).argmax().item()
@@ -128,14 +136,14 @@ class MADDPG:
                 to_p.data.copy_(tau * from_p.data + (1.0 - tau) * to_p.data)
 
         for agent in self.agents.values():
-            soft_update(agent.actor, agent.target_actor)
-            soft_update(agent.critic, agent.target_critic)
+            soft_update(agent.AC_NNs.actor, agent.target_AC_NNs.actor)
+            soft_update(agent.AC_NNs.critic, agent.target_AC_NNs.critic)
 
 
     def save(self, reward):
         """save actor parameters of all agents and training reward to `res_dir`"""
         torch.save(
-            {name: agent.actor.state_dict() for name, agent in self.agents.items()},  # actor parameter
+            {name: agent.AC_NNs.actor.state_dict() for name, agent in self.agents.items()},  # actor parameter
             os.path.join(self.res_dir, 'model.pt')
         )
         with open(os.path.join(self.res_dir, 'rewards.pkl'), 'wb') as f:  # save training data
@@ -147,5 +155,5 @@ class MADDPG:
         instance = cls(dim_info, 0, 0, 0, 0, os.path.dirname(file))
         data = torch.load(file)
         for agent_id, agent in instance.agents.items():
-            agent.actor.load_state_dict(data[agent_id])
+            agent.AC_NNs.actor.load_state_dict(data[agent_id])
         return instance

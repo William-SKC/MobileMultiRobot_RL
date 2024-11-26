@@ -1,0 +1,8 @@
+{"time":"2024-11-25T16:58:07.13655-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-25T16:58:07.136584-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241125_165807-fcthuwr4/logs/debug-core.log"}
+{"time":"2024-11-25T16:58:07.242853-08:00","level":"INFO","msg":"created new stream","id":"fcthuwr4"}
+{"time":"2024-11-25T16:58:07.242893-08:00","level":"INFO","msg":"stream: started","id":"fcthuwr4"}
+{"time":"2024-11-25T16:58:07.242913-08:00","level":"INFO","msg":"sender: started","stream_id":"fcthuwr4"}
+{"time":"2024-11-25T16:58:07.24294-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"fcthuwr4"}
+{"time":"2024-11-25T16:58:07.242939-08:00","level":"INFO","msg":"handler: started","stream_id":"fcthuwr4"}
+{"time":"2024-11-25T16:58:07.247029-08:00","level":"INFO","msg":"Starting system monitor"}

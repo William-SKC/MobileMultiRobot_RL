@@ -1,0 +1,15 @@
+{"time":"2024-11-22T17:28:34.456693-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-22T17:28:34.456746-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241122_172834-k9pg3am2/logs/debug-core.log"}
+{"time":"2024-11-22T17:28:34.565259-08:00","level":"INFO","msg":"created new stream","id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:34.565288-08:00","level":"INFO","msg":"stream: started","id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:34.565304-08:00","level":"INFO","msg":"handler: started","stream_id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:34.56534-08:00","level":"INFO","msg":"sender: started","stream_id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:34.565321-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:34.57075-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T17:28:40.437935-08:00","level":"INFO","msg":"stream: closing","id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:40.437958-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T17:28:40.438578-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T17:28:40.438672-08:00","level":"INFO","msg":"handler: closed","stream_id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:40.438678-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:40.438685-08:00","level":"INFO","msg":"sender: closed","stream_id":"k9pg3am2"}
+{"time":"2024-11-22T17:28:40.438725-08:00","level":"INFO","msg":"stream: closed","id":"k9pg3am2"}

@@ -1,0 +1,15 @@
+{"time":"2024-11-25T16:07:58.758914-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-25T16:07:58.7597-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241125_160758-lnt108f4/logs/debug-core.log"}
+{"time":"2024-11-25T16:07:58.867581-08:00","level":"INFO","msg":"created new stream","id":"lnt108f4"}
+{"time":"2024-11-25T16:07:58.867615-08:00","level":"INFO","msg":"stream: started","id":"lnt108f4"}
+{"time":"2024-11-25T16:07:58.867624-08:00","level":"INFO","msg":"handler: started","stream_id":"lnt108f4"}
+{"time":"2024-11-25T16:07:58.86763-08:00","level":"INFO","msg":"sender: started","stream_id":"lnt108f4"}
+{"time":"2024-11-25T16:07:58.867661-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"lnt108f4"}
+{"time":"2024-11-25T16:07:58.87369-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-25T16:08:07.67427-08:00","level":"INFO","msg":"stream: closing","id":"lnt108f4"}
+{"time":"2024-11-25T16:08:07.674346-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-25T16:08:07.67498-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-25T16:08:07.675119-08:00","level":"INFO","msg":"handler: closed","stream_id":"lnt108f4"}
+{"time":"2024-11-25T16:08:07.675125-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"lnt108f4"}
+{"time":"2024-11-25T16:08:07.675136-08:00","level":"INFO","msg":"sender: closed","stream_id":"lnt108f4"}
+{"time":"2024-11-25T16:08:07.675253-08:00","level":"INFO","msg":"stream: closed","id":"lnt108f4"}

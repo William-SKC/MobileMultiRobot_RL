@@ -1,0 +1,15 @@
+{"time":"2024-11-22T17:21:27.489108-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-22T17:21:27.489144-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241122_172127-n774avgm/logs/debug-core.log"}
+{"time":"2024-11-22T17:21:27.596802-08:00","level":"INFO","msg":"created new stream","id":"n774avgm"}
+{"time":"2024-11-22T17:21:27.596829-08:00","level":"INFO","msg":"stream: started","id":"n774avgm"}
+{"time":"2024-11-22T17:21:27.596842-08:00","level":"INFO","msg":"sender: started","stream_id":"n774avgm"}
+{"time":"2024-11-22T17:21:27.596897-08:00","level":"INFO","msg":"handler: started","stream_id":"n774avgm"}
+{"time":"2024-11-22T17:21:27.596863-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"n774avgm"}
+{"time":"2024-11-22T17:21:27.602984-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T17:21:34.192177-08:00","level":"INFO","msg":"stream: closing","id":"n774avgm"}
+{"time":"2024-11-22T17:21:34.192226-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T17:21:34.192799-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T17:21:34.192942-08:00","level":"INFO","msg":"handler: closed","stream_id":"n774avgm"}
+{"time":"2024-11-22T17:21:34.19295-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n774avgm"}
+{"time":"2024-11-22T17:21:34.192969-08:00","level":"INFO","msg":"sender: closed","stream_id":"n774avgm"}
+{"time":"2024-11-22T17:21:34.193152-08:00","level":"INFO","msg":"stream: closed","id":"n774avgm"}

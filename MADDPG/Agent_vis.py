@@ -17,11 +17,10 @@ class Agent_vis:
         self.AC_NNs = ActorCriticNetworks(vis_width, act_dim, num_agents)
     
         self.actor_optimizer = Adam(self.AC_NNs.actor.parameters(), lr=actor_lr)
-        self.critic_optimizer = Adam(self.AC_NNs.maddpg_critic.parameters(), lr=critic_lr)
+        self.critic_optimizer = Adam(self.AC_NNs.critic.parameters(), lr=critic_lr)
 
         #target networks
-        self.target_actor = deepcopy(self.AC_NNs.actor)
-        self.target_critic = deepcopy(self.AC_NNs.maddpg_critic)
+        self.target_AC_NNs = deepcopy(self.AC_NNs)
         self.num_agents = num_agents
         self.device = device
 
@@ -30,7 +29,8 @@ class Agent_vis:
         # a) interact with the environment
         # b) calculate action when update actor, where input(obs) is sampled from replay buffer with size:
         # torch.Size([batch_size, state_dim])
-        logits = self.AC_NNs.actor(obs)  # torch.Size([batch_size, action_size])
+        # print('action: obs', obs.shape)
+        logits = self.AC_NNs.actor_forward(obs)  # torch.Size([batch_size, action_size])
         action = F.gumbel_softmax(logits, hard=True)
         if model_out:
             return action, logits
@@ -40,30 +40,30 @@ class Agent_vis:
         # when calculate target critic value in MADDPG,
         # we use target actor to get next action given next states,
         # which is sampled from replay buffer with size torch.Size([batch_size, state_dim])
-        logits = self.target_actor(obs)  # torch.Size([batch_size, action_size])
+        logits = self.target_AC_NNs.actor_forward(obs)  # torch.Size([batch_size, action_size])
         action = F.gumbel_softmax(logits, hard=True)
         return action.squeeze(0).detach()
 
     def critic_value(self, state_list: List[Tensor], act_list: List[Tensor]):
         features = torch.cat(state_list, dim=0)
         actions = torch.cat(act_list, dim=0)
-        return self.AC_NNs.maddpg_critic.critic_forward(features, actions).squeeze(1)
+        return self.AC_NNs.critic_forward(features, actions).squeeze(1)
 
     def target_critic_value(self, state_list: List[Tensor], act_list: List[Tensor]):
         features = torch.cat(state_list, dim=0)
         actions = torch.cat(act_list, dim=0)
-        return self.target_critic.critic_forward(features, actions).squeeze(1) # tensor with a given length
+        return self.target_AC_NNs.critic_forward(features, actions).squeeze(1) # tensor with a given length
 
     def update_actor(self, loss):
         self.actor_optimizer.zero_grad()
         loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.actor.parameters(), 0.5)
+        torch.nn.utils.clip_grad_norm_(self.AC_NNs.actor.parameters(), 0.5)
         self.actor_optimizer.step()
 
     def update_critic(self, loss):
         self.critic_optimizer.zero_grad()
         loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.critic.parameters(), 0.5)
+        torch.nn.utils.clip_grad_norm_(self.AC_NNs.critic.parameters(), 0.5)
         self.critic_optimizer.step()
 
 # def batchify_obs(obs, device):
@@ -112,7 +112,7 @@ class ActorCriticNetworks(nn.Module):
         
         # Critic head for MADDPG (Value network)
         # Accepts concatenated features and actions of all agents
-        self.maddpg_critic = nn.Sequential(
+        self.critic = nn.Sequential(
             nn.Linear((self.fc_input_dim + act_dim) * num_agents, 1024),
             nn.ReLU(),
             nn.Linear(1024, 512),
@@ -126,10 +126,9 @@ class ActorCriticNetworks(nn.Module):
         features = self.feature_extractor(dummy_input)
         return features.view(-1).size(0)
 
-    def forward(self, x):
+    def actor_forward(self, x):
         # Pass input through the feature extractor
         features = self.feature_extractor(x)
-        
         # Pass features through the shared fully connected layer
         shared = F.relu(self.shared_fc(features))
         
@@ -139,11 +138,13 @@ class ActorCriticNetworks(nn.Module):
         return policy
     
     def critic_forward(self, features, actions):
+        features = self.feature_extractor(features)
         # Concatenate features and actions of all agents
-        critic_input = torch.cat([features.view(self.num_agents, -1), actions.view(self.num_agents, -1)], dim=-1)
-        
+        # critic_input = torch.cat([features.view(self.num_agents, -1), actions.view(self.num_agents, -1)], dim=-1)
+        critic_input = torch.cat((features, actions), dim=-1)
+        # print('critic_forward: ', features.shape, actions.shape, critic_input.shape)
         # Pass concatenated input through the critic network
-        value = self.maddpg_critic(critic_input)
+        value = self.critic(critic_input)
         
         return value
 

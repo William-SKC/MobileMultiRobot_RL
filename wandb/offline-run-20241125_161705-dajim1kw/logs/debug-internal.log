@@ -1,0 +1,15 @@
+{"time":"2024-11-25T16:17:05.974774-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-25T16:17:05.974817-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241125_161705-dajim1kw/logs/debug-core.log"}
+{"time":"2024-11-25T16:17:06.082222-08:00","level":"INFO","msg":"created new stream","id":"dajim1kw"}
+{"time":"2024-11-25T16:17:06.082255-08:00","level":"INFO","msg":"stream: started","id":"dajim1kw"}
+{"time":"2024-11-25T16:17:06.082272-08:00","level":"INFO","msg":"sender: started","stream_id":"dajim1kw"}
+{"time":"2024-11-25T16:17:06.08228-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"dajim1kw"}
+{"time":"2024-11-25T16:17:06.082295-08:00","level":"INFO","msg":"handler: started","stream_id":"dajim1kw"}
+{"time":"2024-11-25T16:17:06.087483-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-25T16:17:17.064683-08:00","level":"INFO","msg":"stream: closing","id":"dajim1kw"}
+{"time":"2024-11-25T16:17:17.064725-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-25T16:17:17.065101-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-25T16:17:17.065215-08:00","level":"INFO","msg":"handler: closed","stream_id":"dajim1kw"}
+{"time":"2024-11-25T16:17:17.065223-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"dajim1kw"}
+{"time":"2024-11-25T16:17:17.065242-08:00","level":"INFO","msg":"sender: closed","stream_id":"dajim1kw"}
+{"time":"2024-11-25T16:17:17.065452-08:00","level":"INFO","msg":"stream: closed","id":"dajim1kw"}

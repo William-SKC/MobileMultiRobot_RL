@@ -1,0 +1,15 @@
+{"time":"2024-11-22T16:46:01.672856-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-22T16:46:01.672906-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241122_164601-ovntdfes/logs/debug-core.log"}
+{"time":"2024-11-22T16:46:01.783637-08:00","level":"INFO","msg":"created new stream","id":"ovntdfes"}
+{"time":"2024-11-22T16:46:01.783663-08:00","level":"INFO","msg":"stream: started","id":"ovntdfes"}
+{"time":"2024-11-22T16:46:01.783698-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ovntdfes"}
+{"time":"2024-11-22T16:46:01.783753-08:00","level":"INFO","msg":"sender: started","stream_id":"ovntdfes"}
+{"time":"2024-11-22T16:46:01.783775-08:00","level":"INFO","msg":"handler: started","stream_id":"ovntdfes"}
+{"time":"2024-11-22T16:46:01.789417-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T16:46:04.684178-08:00","level":"INFO","msg":"stream: closing","id":"ovntdfes"}
+{"time":"2024-11-22T16:46:04.684223-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T16:46:04.684492-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T16:46:04.684612-08:00","level":"INFO","msg":"handler: closed","stream_id":"ovntdfes"}
+{"time":"2024-11-22T16:46:04.684618-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ovntdfes"}
+{"time":"2024-11-22T16:46:04.684622-08:00","level":"INFO","msg":"sender: closed","stream_id":"ovntdfes"}
+{"time":"2024-11-22T16:46:04.684733-08:00","level":"INFO","msg":"stream: closed","id":"ovntdfes"}

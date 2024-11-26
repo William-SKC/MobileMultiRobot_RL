@@ -1,0 +1,15 @@
+{"time":"2024-11-25T16:41:36.14974-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-25T16:41:36.149788-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241125_164136-ww290vt2/logs/debug-core.log"}
+{"time":"2024-11-25T16:41:36.257406-08:00","level":"INFO","msg":"created new stream","id":"ww290vt2"}
+{"time":"2024-11-25T16:41:36.25744-08:00","level":"INFO","msg":"stream: started","id":"ww290vt2"}
+{"time":"2024-11-25T16:41:36.257459-08:00","level":"INFO","msg":"sender: started","stream_id":"ww290vt2"}
+{"time":"2024-11-25T16:41:36.257469-08:00","level":"INFO","msg":"handler: started","stream_id":"ww290vt2"}
+{"time":"2024-11-25T16:41:36.257475-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ww290vt2"}
+{"time":"2024-11-25T16:41:36.262822-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-25T16:41:47.059529-08:00","level":"INFO","msg":"stream: closing","id":"ww290vt2"}
+{"time":"2024-11-25T16:41:47.059551-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-25T16:41:47.059885-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-25T16:41:47.06-08:00","level":"INFO","msg":"handler: closed","stream_id":"ww290vt2"}
+{"time":"2024-11-25T16:41:47.060009-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ww290vt2"}
+{"time":"2024-11-25T16:41:47.060015-08:00","level":"INFO","msg":"sender: closed","stream_id":"ww290vt2"}
+{"time":"2024-11-25T16:41:47.060145-08:00","level":"INFO","msg":"stream: closed","id":"ww290vt2"}

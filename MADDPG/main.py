@@ -25,7 +25,7 @@ def get_env(env_name, ep_len=25):
     if env_name == 'simple_v3':
         new_env = simple_v3.parallel_env(render_mode="rgb_array", max_cycles=ep_len)
     if env_name == 'simple_nav_v1':
-        new_env = simple_nav_v1.parallel_env(render_mode="rgb_array", max_cycles=ep_len)
+        new_env = simple_nav_v1.parallel_env(render_mode="rgb_array", max_cycles=ep_len, vis = True)
 
 
 
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     
     # model
     maddpg = MADDPG(dim_info, args.buffer_capacity, args.batch_size, args.actor_lr, args.critic_lr,
-                    result_dir, vis = False)
+                    result_dir, vis = True)
 
     """Start Training"""
     experiment_name = f"MADDPG_{args.env_name}_batch_size_{args.batch_size}"

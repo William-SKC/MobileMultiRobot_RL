@@ -1,0 +1,15 @@
+{"time":"2024-11-22T17:11:37.169076-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-22T17:11:37.169126-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241122_171137-uysjccsd/logs/debug-core.log"}
+{"time":"2024-11-22T17:11:37.277456-08:00","level":"INFO","msg":"created new stream","id":"uysjccsd"}
+{"time":"2024-11-22T17:11:37.277493-08:00","level":"INFO","msg":"stream: started","id":"uysjccsd"}
+{"time":"2024-11-22T17:11:37.277506-08:00","level":"INFO","msg":"sender: started","stream_id":"uysjccsd"}
+{"time":"2024-11-22T17:11:37.27753-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"uysjccsd"}
+{"time":"2024-11-22T17:11:37.277549-08:00","level":"INFO","msg":"handler: started","stream_id":"uysjccsd"}
+{"time":"2024-11-22T17:11:37.282623-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T17:11:44.141632-08:00","level":"INFO","msg":"stream: closing","id":"uysjccsd"}
+{"time":"2024-11-22T17:11:44.143621-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T17:11:44.143998-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T17:11:44.144109-08:00","level":"INFO","msg":"handler: closed","stream_id":"uysjccsd"}
+{"time":"2024-11-22T17:11:44.144117-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"uysjccsd"}
+{"time":"2024-11-22T17:11:44.14413-08:00","level":"INFO","msg":"sender: closed","stream_id":"uysjccsd"}
+{"time":"2024-11-22T17:11:44.144324-08:00","level":"INFO","msg":"stream: closed","id":"uysjccsd"}

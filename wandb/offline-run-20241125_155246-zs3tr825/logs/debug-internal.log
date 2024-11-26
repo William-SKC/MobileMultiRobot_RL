@@ -1,0 +1,15 @@
+{"time":"2024-11-25T15:52:46.343285-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-25T15:52:46.34334-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241125_155246-zs3tr825/logs/debug-core.log"}
+{"time":"2024-11-25T15:52:46.453983-08:00","level":"INFO","msg":"created new stream","id":"zs3tr825"}
+{"time":"2024-11-25T15:52:46.454009-08:00","level":"INFO","msg":"stream: started","id":"zs3tr825"}
+{"time":"2024-11-25T15:52:46.454206-08:00","level":"INFO","msg":"handler: started","stream_id":"zs3tr825"}
+{"time":"2024-11-25T15:52:46.454208-08:00","level":"INFO","msg":"sender: started","stream_id":"zs3tr825"}
+{"time":"2024-11-25T15:52:46.454256-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"zs3tr825"}
+{"time":"2024-11-25T15:52:46.458825-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-25T15:52:55.648077-08:00","level":"INFO","msg":"stream: closing","id":"zs3tr825"}
+{"time":"2024-11-25T15:52:55.648274-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-25T15:52:55.649004-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-25T15:52:55.649398-08:00","level":"INFO","msg":"handler: closed","stream_id":"zs3tr825"}
+{"time":"2024-11-25T15:52:55.649406-08:00","level":"INFO","msg":"sender: closed","stream_id":"zs3tr825"}
+{"time":"2024-11-25T15:52:55.649405-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"zs3tr825"}
+{"time":"2024-11-25T15:52:55.649566-08:00","level":"INFO","msg":"stream: closed","id":"zs3tr825"}

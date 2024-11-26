@@ -1,0 +1,15 @@
+{"time":"2024-11-25T15:54:27.347496-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-25T15:54:27.347553-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241125_155427-jd1ubwrx/logs/debug-core.log"}
+{"time":"2024-11-25T15:54:27.455458-08:00","level":"INFO","msg":"created new stream","id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:27.455485-08:00","level":"INFO","msg":"stream: started","id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:27.455507-08:00","level":"INFO","msg":"sender: started","stream_id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:27.455499-08:00","level":"INFO","msg":"handler: started","stream_id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:27.455511-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:27.461447-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-25T15:54:36.085951-08:00","level":"INFO","msg":"stream: closing","id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:36.085976-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-25T15:54:36.086393-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-25T15:54:36.086491-08:00","level":"INFO","msg":"handler: closed","stream_id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:36.086497-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:36.086504-08:00","level":"INFO","msg":"sender: closed","stream_id":"jd1ubwrx"}
+{"time":"2024-11-25T15:54:36.086654-08:00","level":"INFO","msg":"stream: closed","id":"jd1ubwrx"}
