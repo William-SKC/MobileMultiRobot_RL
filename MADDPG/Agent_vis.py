@@ -12,8 +12,8 @@ from torch.optim import Adam
 class Agent_vis:
     """Agent that take in 2d images and can interact with environment from pettingzoo"""
 
-    def __init__(self, vis_width, act_dim, num_agents, actor_lr, critic_lr, device = "cpu"):
-        
+    def __init__(self, vis_width, act_dim, num_agents, actor_lr, critic_lr, device):
+        self.device = device
         self.AC_NNs = ActorCriticNetworks(vis_width, act_dim, num_agents)
     
         self.actor_optimizer = Adam(self.AC_NNs.actor.parameters(), lr=actor_lr)

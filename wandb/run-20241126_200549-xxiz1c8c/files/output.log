@@ -1,0 +1,4 @@
+episode 100, agent_0: -3.260803; sum reward: -3.2608026854661913
+episode 200, agent_0: -28.151806; sum reward: -28.15180564419847
+episode 300, agent_0: -11.252058; sum reward: -11.252058405239813
+save:  {'agent_0': <Agent_vis.Agent_vis object at 0x7dc9905f3010>}

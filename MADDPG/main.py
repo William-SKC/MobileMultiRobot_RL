@@ -43,7 +43,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--env_name', type=str, default='simple_nav_v1', help='name of the env',
                         choices=['simple_adversary_v3', 'simple_spread_v3', 'simple_tag_v3', 'simple_speaker_listener_v4', 'simple_push_v3', 'simple_v3' 'simple_nav_v1'])
-    parser.add_argument('--episode_num', type=int, default=10000,
+    parser.add_argument('--episode_num', type=int, default=20000,
                         help='total episode num during training procedure') #30000
     parser.add_argument('--episode_length', type=int, default=25, help='steps per episode')#25
     parser.add_argument('--learn_interval', type=int, default=100,
@@ -52,8 +52,8 @@ if __name__ == '__main__':
                         help='random steps before the agent start to learn')#5e4
     parser.add_argument('--tau', type=float, default=0.02, help='soft update parameter')
     parser.add_argument('--gamma', type=float, default=0.95, help='discount factor')
-    parser.add_argument('--buffer_capacity', type=int, default=int(1e6), help='capacity of replay buffer')
-    parser.add_argument('--batch_size', type=int, default=512, help='batch-size of replay buffer') #1024
+    parser.add_argument('--buffer_capacity', type=int, default=int(1e3), help='capacity of replay buffer')
+    parser.add_argument('--batch_size', type=int, default=128, help='batch-size of replay buffer') #1024
     parser.add_argument('--actor_lr', type=float, default=0.01, help='learning rate of actor')
     parser.add_argument('--critic_lr', type=float, default=0.01, help='learning rate of critic')
     args = parser.parse_args()

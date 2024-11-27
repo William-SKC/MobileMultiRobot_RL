@@ -1,0 +1,18 @@
+{"time":"2024-11-26T20:16:16.752999556-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-26T20:16:16.753020139-08:00","level":"INFO","msg":"created symlink","path":"/home/shengkangchen/MobileMultiRobot_RL/wandb/run-20241126_201616-6gbr62gh/logs/debug-core.log"}
+{"time":"2024-11-26T20:16:16.857394326-08:00","level":"INFO","msg":"created new stream","id":"6gbr62gh"}
+{"time":"2024-11-26T20:16:16.857411701-08:00","level":"INFO","msg":"stream: started","id":"6gbr62gh"}
+{"time":"2024-11-26T20:16:16.857467839-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"6gbr62gh"}
+{"time":"2024-11-26T20:16:16.857531271-08:00","level":"INFO","msg":"sender: started","stream_id":"6gbr62gh"}
+{"time":"2024-11-26T20:16:16.857572523-08:00","level":"INFO","msg":"handler: started","stream_id":"6gbr62gh"}
+{"time":"2024-11-26T20:16:17.136644003-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-26T22:44:33.316317249-08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/billy-skc/mbrl-nfo/6gbr62gh/file_stream\": EOF"}
+{"time":"2024-11-26T22:45:11.140426701-08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/billy-skc/mbrl-nfo/6gbr62gh/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: read udp 127.0.0.1:53682->127.0.0.53:53: i/o timeout"}
+{"time":"2024-11-26T23:53:35.096009626-08:00","level":"INFO","msg":"stream: closing","id":"6gbr62gh"}
+{"time":"2024-11-26T23:53:35.096029188-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-26T23:53:35.096351734-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-26T23:53:35.5899974-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-26T23:53:36.546470632-08:00","level":"INFO","msg":"handler: closed","stream_id":"6gbr62gh"}
+{"time":"2024-11-26T23:53:36.546523962-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"6gbr62gh"}
+{"time":"2024-11-26T23:53:36.546560072-08:00","level":"INFO","msg":"sender: closed","stream_id":"6gbr62gh"}
+{"time":"2024-11-26T23:53:36.546624144-08:00","level":"INFO","msg":"stream: closed","id":"6gbr62gh"}

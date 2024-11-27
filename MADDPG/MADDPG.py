@@ -30,9 +30,11 @@ def setup_logger(filename):
 class MADDPG:
     """A MADDPG(Multi Agent Deep Deterministic Policy Gradient) agent"""
 
-    def __init__(self, dim_info, capacity, batch_size, actor_lr, critic_lr, res_dir, vis = False):
+    def __init__(self, dim_info, capacity, batch_size, actor_lr, critic_lr, res_dir, vis = True):
         # sum all the dims of each agent to get input dim for critic
         global_obs_act_dim = sum(sum(val) for val in dim_info.values())
+        # self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        self.device = 'cpu'
         # create Agent(actor-critic) and replay buffer for each agent
         self.agents = {}
         self.buffers = {}
@@ -42,10 +44,11 @@ class MADDPG:
             if self.vis:
                 self.vis_width = int(math.sqrt(obs_dim/4))
                 print('obs_dim: ', global_obs_act_dim, obs_dim, self.vis_width)
-                self.agents[agent_id] = Agent_vis(self.vis_width, act_dim, len(dim_info), actor_lr, critic_lr)
+                self.agents[agent_id] = Agent_vis(self.vis_width, act_dim, len(dim_info), actor_lr, critic_lr, self.device)
             else:
+                pass
                 self.agents[agent_id] = Agent(obs_dim, act_dim, global_obs_act_dim, actor_lr, critic_lr)
-            self.buffers[agent_id] = Buffer(capacity, obs_dim, act_dim, 'cpu')
+            self.buffers[agent_id] = Buffer(capacity, obs_dim, act_dim, self.device)
         self.dim_info = dim_info
 
         self.batch_size = batch_size
@@ -77,7 +80,7 @@ class MADDPG:
         obs, act, reward, next_obs, done, next_act = {}, {}, {}, {}, {}, {}
         for agent_id, buffer in self.buffers.items():
             o, a, r, n_o, d = buffer.sample(indices)
-            # print('sample: ', o.shape, n_o.shape, a.shape, batch_size) # TODO: reshape to tensor (1,C,H,W) for vis
+            # print('sample: ', o.shape, n_o.shape, a.shape, batch_size) 
             if self.vis:
                 n_o = torch.reshape(n_o, (batch_size, 4, self.vis_width, self.vis_width))
                 o = torch.reshape(o, (batch_size, 4, self.vis_width, self.vis_width))

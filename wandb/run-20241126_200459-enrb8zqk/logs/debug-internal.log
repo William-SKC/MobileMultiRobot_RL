@@ -1,0 +1,16 @@
+{"time":"2024-11-26T20:04:59.976283604-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-26T20:04:59.976324131-08:00","level":"INFO","msg":"created symlink","path":"/home/shengkangchen/MobileMultiRobot_RL/wandb/run-20241126_200459-enrb8zqk/logs/debug-core.log"}
+{"time":"2024-11-26T20:05:00.082677904-08:00","level":"INFO","msg":"created new stream","id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:00.082726509-08:00","level":"INFO","msg":"stream: started","id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:00.082903975-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:00.082990977-08:00","level":"INFO","msg":"sender: started","stream_id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:00.083091068-08:00","level":"INFO","msg":"handler: started","stream_id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:00.404925834-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-26T20:05:41.702306469-08:00","level":"INFO","msg":"stream: closing","id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:41.702367113-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-26T20:05:41.703223665-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-26T20:05:42.18347405-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-26T20:05:42.362674425-08:00","level":"INFO","msg":"handler: closed","stream_id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:42.362714477-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:42.362740241-08:00","level":"INFO","msg":"sender: closed","stream_id":"enrb8zqk"}
+{"time":"2024-11-26T20:05:42.362811477-08:00","level":"INFO","msg":"stream: closed","id":"enrb8zqk"}
