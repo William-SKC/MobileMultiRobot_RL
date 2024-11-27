@@ -1,0 +1,8 @@
+{"time":"2024-11-26T01:26:03.615133-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-26T01:26:03.615183-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/offline-run-20241126_012603-06wjsmrn/logs/debug-core.log"}
+{"time":"2024-11-26T01:26:03.723942-08:00","level":"INFO","msg":"created new stream","id":"06wjsmrn"}
+{"time":"2024-11-26T01:26:03.723962-08:00","level":"INFO","msg":"stream: started","id":"06wjsmrn"}
+{"time":"2024-11-26T01:26:03.723992-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"06wjsmrn"}
+{"time":"2024-11-26T01:26:03.724009-08:00","level":"INFO","msg":"sender: started","stream_id":"06wjsmrn"}
+{"time":"2024-11-26T01:26:03.72402-08:00","level":"INFO","msg":"handler: started","stream_id":"06wjsmrn"}
+{"time":"2024-11-26T01:26:03.7289-08:00","level":"INFO","msg":"Starting system monitor"}
