@@ -1,0 +1,39 @@
+{
+  "os":  "macOS-15.1.1-arm64-arm-64bit",
+  "python":  "3.11.8",
+  "startedAt":  "2024-11-27T01:31:36.761477Z",
+  "program":  "/Users/shengkangchen/Documents/MobileMultiRobot_RL/MADDPG/main.py",
+  "codePath":  "MADDPG/main.py",
+  "git":  {
+    "remote":  "https://github.com/William-SKC/MobileMultiRobot_RL.git",
+    "commit":  "9068aa034f8e0a22bea5081979c3ec5448c3be5f"
+  },
+  "email":  "billy.skc@gmail.com",
+  "root":  "/Users/shengkangchen/Documents/MobileMultiRobot_RL",
+  "host":  "Shengkangs-MacBook-Pro.local",
+  "username":  "shengkangchen",
+  "executable":  "/opt/anaconda3/envs/pettingzoo_m4/bin/python",
+  "codePathLocal":  "MADDPG/main.py",
+  "cpu_count":  14,
+  "cpu_count_logical":  14,
+  "disk":  {
+    "/":  {
+      "total":  "994662584320",
+      "used":  "95418961920"
+    }
+  },
+  "memory":  {
+    "total":  "38654705664"
+  },
+  "cpu":  {
+    "count":  14,
+    "countLogical":  14
+  },
+  "apple":  {
+    "name":  "Apple M4 Max",
+    "ecpuCores":  4,
+    "pcpuCores":  10,
+    "gpuCores":  32,
+    "memoryGb":  36
+  }
+}

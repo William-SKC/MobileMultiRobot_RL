@@ -1,0 +1,16 @@
+{"time":"2024-11-26T16:57:32.485681-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-26T16:57:32.485714-08:00","level":"INFO","msg":"created symlink","path":"/Users/shengkangchen/Documents/MobileMultiRobot_RL/wandb/run-20241126_165732-ysct1jv3/logs/debug-core.log"}
+{"time":"2024-11-26T16:57:32.599037-08:00","level":"INFO","msg":"created new stream","id":"ysct1jv3"}
+{"time":"2024-11-26T16:57:32.599063-08:00","level":"INFO","msg":"stream: started","id":"ysct1jv3"}
+{"time":"2024-11-26T16:57:32.599082-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ysct1jv3"}
+{"time":"2024-11-26T16:57:32.59926-08:00","level":"INFO","msg":"handler: started","stream_id":"ysct1jv3"}
+{"time":"2024-11-26T16:57:32.599257-08:00","level":"INFO","msg":"sender: started","stream_id":"ysct1jv3"}
+{"time":"2024-11-26T16:57:33.025465-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-26T17:31:22.513546-08:00","level":"INFO","msg":"stream: closing","id":"ysct1jv3"}
+{"time":"2024-11-26T17:31:22.513747-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-26T17:31:22.514554-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-26T17:31:24.01341-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-26T17:31:24.197406-08:00","level":"INFO","msg":"sender: closed","stream_id":"ysct1jv3"}
+{"time":"2024-11-26T17:31:24.1974-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ysct1jv3"}
+{"time":"2024-11-26T17:31:24.197754-08:00","level":"INFO","msg":"handler: closed","stream_id":"ysct1jv3"}
+{"time":"2024-11-26T17:31:24.197927-08:00","level":"INFO","msg":"stream: closed","id":"ysct1jv3"}

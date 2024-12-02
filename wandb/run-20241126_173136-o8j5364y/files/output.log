@@ -1,0 +1,42 @@
+episode 100, agent_0: -42.107900; sum reward: -42.10790001844072
+episode 200, agent_0: -30.477027; sum reward: -30.477027196460664
+episode 300, agent_0: -9.829573; sum reward: -9.829572941357045
+episode 400, agent_0: -16.430342; sum reward: -16.43034167789189
+episode 500, agent_0: -32.514292; sum reward: -32.514292204180165
+episode 600, agent_0: -58.967977; sum reward: -58.967976689994806
+episode 700, agent_0: -11.868820; sum reward: -11.868819630114846
+episode 800, agent_0: -8.695979; sum reward: -8.69597931355811
+Traceback (most recent call last):
+  File "/Users/shengkangchen/Documents/MobileMultiRobot_RL/MADDPG/main.py", line 110, in <module>
+    maddpg.learn(args.batch_size, args.gamma)
+  File "/Users/shengkangchen/Documents/MobileMultiRobot_RL/MADDPG/MADDPG.py", line 125, in learn
+    action, logits = agent.action(obs[agent_id], model_out=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shengkangchen/Documents/MobileMultiRobot_RL/MADDPG/Agent_vis.py", line 33, in action
+    logits = self.AC_NNs.actor_forward(obs)  # torch.Size([batch_size, action_size])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shengkangchen/Documents/MobileMultiRobot_RL/MADDPG/Agent_vis.py", line 131, in actor_forward
+    features = self.feature_extractor(x)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+KeyboardInterrupt
