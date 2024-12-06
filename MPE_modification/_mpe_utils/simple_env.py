@@ -150,7 +150,7 @@ class SimpleEnv(AECEnv):
             loc_obs_2d = np.zeros((self.height, self.width, 1))
             # print(agent_x, agent_y, px, py)
             # loc_obs_2d[px, py] = 1
-            row = (self.height - 1) - px
+            row = (self.height - 1) - py
             col = px
             loc_obs_2d[row, col] = 1
             observation = np.concatenate((observation, loc_obs_2d), axis = 2) #(H, W, 4)

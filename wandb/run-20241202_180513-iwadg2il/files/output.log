@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/home/shengkangchen/MobileMultiRobot_RL/MADDPG/main.py", line 97, in <module>
+    next_obs, reward, done, _, info = env.step(action)
+                                      ^^^^^^^^^^^^^^^^
+  File "/home/shengkangchen/anaconda3/envs/pettingzoo/lib/python3.11/site-packages/pettingzoo/utils/conversions.py", line 207, in step
+    self.aec_env.step(actions[agent])
+  File "/home/shengkangchen/anaconda3/envs/pettingzoo/lib/python3.11/site-packages/pettingzoo/utils/wrappers/order_enforcing.py", line 96, in step
+    super().step(action)
+  File "/home/shengkangchen/anaconda3/envs/pettingzoo/lib/python3.11/site-packages/pettingzoo/utils/wrappers/base.py", line 47, in step
+    self.env.step(action)
+  File "/home/shengkangchen/anaconda3/envs/pettingzoo/lib/python3.11/site-packages/pettingzoo/utils/wrappers/assert_out_of_bounds.py", line 26, in step
+    super().step(action)
+  File "/home/shengkangchen/anaconda3/envs/pettingzoo/lib/python3.11/site-packages/pettingzoo/utils/wrappers/base.py", line 47, in step
+    self.env.step(action)
+  File "/home/shengkangchen/anaconda3/envs/pettingzoo/lib/python3.11/site-packages/pettingzoo/mpe/_mpe_utils/simple_env.py", line 280, in step
+    self._execute_world_step()
+  File "/home/shengkangchen/anaconda3/envs/pettingzoo/lib/python3.11/site-packages/pettingzoo/mpe/_mpe_utils/simple_env.py", line 224, in _execute_world_step
+    self.rewards[agent.name] = rewardf
+                               ^^^^^^^
+NameError: name 'rewardf' is not defined

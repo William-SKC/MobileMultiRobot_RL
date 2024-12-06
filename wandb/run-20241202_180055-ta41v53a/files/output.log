@@ -1,0 +1,9 @@
+episode 100, agent_0: -4.959221; sum reward: -4.959220840952015
+episode 200, agent_0: -41.658526; sum reward: -41.65852582498889
+Traceback (most recent call last):
+  File "/home/shengkangchen/MobileMultiRobot_RL/MADDPG/main.py", line 111, in <module>
+    maddpg.update_target(args.tau)
+  File "/home/shengkangchen/MobileMultiRobot_RL/MADDPG/MADDPG.py", line 135, in update_target
+    def update_target(self, tau):
+
+KeyboardInterrupt

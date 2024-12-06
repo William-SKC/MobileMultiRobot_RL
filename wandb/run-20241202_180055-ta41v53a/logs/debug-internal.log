@@ -1,0 +1,16 @@
+{"time":"2024-12-02T18:00:55.425905534-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-02T18:00:55.425917-08:00","level":"INFO","msg":"created symlink","path":"/home/shengkangchen/MobileMultiRobot_RL/wandb/run-20241202_180055-ta41v53a/logs/debug-core.log"}
+{"time":"2024-12-02T18:00:55.531160022-08:00","level":"INFO","msg":"created new stream","id":"ta41v53a"}
+{"time":"2024-12-02T18:00:55.53121489-08:00","level":"INFO","msg":"stream: started","id":"ta41v53a"}
+{"time":"2024-12-02T18:00:55.531396848-08:00","level":"INFO","msg":"handler: started","stream_id":"ta41v53a"}
+{"time":"2024-12-02T18:00:55.531556564-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ta41v53a"}
+{"time":"2024-12-02T18:00:55.531555015-08:00","level":"INFO","msg":"sender: started","stream_id":"ta41v53a"}
+{"time":"2024-12-02T18:00:55.857515963-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-02T18:01:29.263782557-08:00","level":"INFO","msg":"stream: closing","id":"ta41v53a"}
+{"time":"2024-12-02T18:01:29.2638248-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-02T18:01:29.264494071-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-02T18:01:31.158516422-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-02T18:01:32.449198837-08:00","level":"INFO","msg":"handler: closed","stream_id":"ta41v53a"}
+{"time":"2024-12-02T18:01:32.449244041-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ta41v53a"}
+{"time":"2024-12-02T18:01:32.449289006-08:00","level":"INFO","msg":"sender: closed","stream_id":"ta41v53a"}
+{"time":"2024-12-02T18:01:32.449341642-08:00","level":"INFO","msg":"stream: closed","id":"ta41v53a"}

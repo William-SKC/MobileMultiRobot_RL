@@ -1,0 +1,16 @@
+{"time":"2024-12-02T18:05:13.850773944-08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-02T18:05:13.850802049-08:00","level":"INFO","msg":"created symlink","path":"/home/shengkangchen/MobileMultiRobot_RL/wandb/run-20241202_180513-iwadg2il/logs/debug-core.log"}
+{"time":"2024-12-02T18:05:13.956463036-08:00","level":"INFO","msg":"created new stream","id":"iwadg2il"}
+{"time":"2024-12-02T18:05:13.956506281-08:00","level":"INFO","msg":"stream: started","id":"iwadg2il"}
+{"time":"2024-12-02T18:05:13.956678569-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"iwadg2il"}
+{"time":"2024-12-02T18:05:13.956788122-08:00","level":"INFO","msg":"sender: started","stream_id":"iwadg2il"}
+{"time":"2024-12-02T18:05:13.956850801-08:00","level":"INFO","msg":"handler: started","stream_id":"iwadg2il"}
+{"time":"2024-12-02T18:05:14.29440701-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-02T18:05:14.383120669-08:00","level":"INFO","msg":"stream: closing","id":"iwadg2il"}
+{"time":"2024-12-02T18:05:14.383182129-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-02T18:05:14.384043193-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-02T18:05:16.246766937-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-02T18:05:16.501103512-08:00","level":"INFO","msg":"handler: closed","stream_id":"iwadg2il"}
+{"time":"2024-12-02T18:05:16.501154554-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"iwadg2il"}
+{"time":"2024-12-02T18:05:16.501179238-08:00","level":"INFO","msg":"sender: closed","stream_id":"iwadg2il"}
+{"time":"2024-12-02T18:05:16.501228288-08:00","level":"INFO","msg":"stream: closed","id":"iwadg2il"}
