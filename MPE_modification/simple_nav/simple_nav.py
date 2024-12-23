@@ -52,7 +52,7 @@ from pettingzoo.utils.conversions import parallel_wrapper_fn
 
 
 class raw_env(SimpleEnv, EzPickle):
-    def __init__(self, max_cycles=25, continuous_actions=False, render_mode='None', vis = False):
+    def __init__(self, max_cycles=25, continuous_actions=False, render_mode='None', vis = False, force_based = False):
         EzPickle.__init__(
             self,
             max_cycles=max_cycles,
@@ -68,7 +68,8 @@ class raw_env(SimpleEnv, EzPickle):
             render_mode=render_mode,
             max_cycles=max_cycles,
             continuous_actions=continuous_actions,
-            vis = vis
+            vis = vis,
+            force_based = force_based
         )
         self.metadata["name"] = "simple_nav_v1"
 
@@ -125,7 +126,7 @@ class Scenario(BaseScenario):
             entity_pos.append(entity.state.p_pos)
         # return np.concatenate([agent.state.p_vel] + entity_pos)
 
-        obs = np.concatenate((entity_pos, [agent.state.p_vel], [agent.state.p_pos]))
-        # obs = env.render()
+        # obs = np.concatenate((entity_pos, [agent.state.p_vel], [agent.state.p_pos]))
+        obs = np.concatenate((entity_pos, [agent.state.p_pos]))
         # print('obs: ', obs)
         return obs.flatten()

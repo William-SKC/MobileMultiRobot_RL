@@ -26,6 +26,7 @@ if __name__ == '__main__':
     gif_num = len([file for file in os.listdir(gif_dir)])  # current number of gif
 
     env, dim_info = get_env(args.env_name, args.episode_length)
+    print("action_spaces: ", env.action_spaces)
     maddpg = MADDPG.load(dim_info, os.path.join(model_dir, 'model.pt'))
 
     agent_num = env.num_agents

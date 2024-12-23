@@ -8,6 +8,7 @@ from pettingzoo.mpe import simple_adversary_v3, simple_spread_v3, simple_tag_v3,
 
 from MADDPG import MADDPG
 
+vis_setting = False
 
 def get_env(env_name, ep_len=25):
     """create environment and get observation and action dimension of each agent in this environment"""
@@ -25,7 +26,7 @@ def get_env(env_name, ep_len=25):
     if env_name == 'simple_v3':
         new_env = simple_v3.parallel_env(render_mode="rgb_array", max_cycles=ep_len)
     if env_name == 'simple_nav_v1':
-        new_env = simple_nav_v1.parallel_env(render_mode="rgb_array", max_cycles=ep_len, vis = True)
+        new_env = simple_nav_v1.parallel_env(render_mode="rgb_array", max_cycles=ep_len, vis = vis_setting, force_based = False)
 
 
 
@@ -43,7 +44,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--env_name', type=str, default='simple_nav_v1', help='name of the env',
                         choices=['simple_adversary_v3', 'simple_spread_v3', 'simple_tag_v3', 'simple_speaker_listener_v4', 'simple_push_v3', 'simple_v3' 'simple_nav_v1'])
-    parser.add_argument('--episode_num', type=int, default=20000,
+    parser.add_argument('--episode_num', type=int, default=5000,
                         help='total episode num during training procedure') #30000
     parser.add_argument('--episode_length', type=int, default=25, help='steps per episode')#25
     parser.add_argument('--learn_interval', type=int, default=100,
@@ -72,7 +73,7 @@ if __name__ == '__main__':
     
     # model
     maddpg = MADDPG(dim_info, args.buffer_capacity, args.batch_size, args.actor_lr, args.critic_lr,
-                    result_dir, vis = True)
+                    result_dir, vis = vis_setting)
 
     """Start Training"""
     experiment_name = f"MADDPG_{args.env_name}_batch_size_{args.batch_size}"

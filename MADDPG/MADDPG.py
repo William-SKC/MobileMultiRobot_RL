@@ -30,7 +30,7 @@ def setup_logger(filename):
 class MADDPG:
     """A MADDPG(Multi Agent Deep Deterministic Policy Gradient) agent"""
 
-    def __init__(self, dim_info, capacity, batch_size, actor_lr, critic_lr, res_dir, vis = True):
+    def __init__(self, dim_info, capacity, batch_size, actor_lr, critic_lr, res_dir, vis = False):
         # sum all the dims of each agent to get input dim for critic
         global_obs_act_dim = sum(sum(val) for val in dim_info.values())
         # self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -139,24 +139,39 @@ class MADDPG:
                 to_p.data.copy_(tau * from_p.data + (1.0 - tau) * to_p.data)
 
         for agent in self.agents.values():
-            soft_update(agent.AC_NNs.actor, agent.target_AC_NNs.actor)
-            soft_update(agent.AC_NNs.critic, agent.target_AC_NNs.critic)
+            if self.vis:
+                soft_update(agent.AC_NNs.actor, agent.target_AC_NNs.actor)
+                soft_update(agent.AC_NNs.critic, agent.target_AC_NNs.critic)
+            else:
+                soft_update(agent.actor, agent.target_actor)
+                soft_update(agent.critic, agent.target_critic)
 
 
     def save(self, reward):
         """save actor parameters of all agents and training reward to `res_dir`"""
-        torch.save(
-            {name: agent.AC_NNs.actor.state_dict() for name, agent in self.agents.items()},  # actor parameter
+        if self.vis:
+            torch.save(
+                {name: agent.AC_NNs.actor.state_dict() for name, agent in self.agents.items()},  # actor parameter
+                os.path.join(self.res_dir, 'model.pt')
+            )
+        else:
+            torch.save(
+            {name: agent.actor.state_dict() for name, agent in self.agents.items()},  # actor parameter
             os.path.join(self.res_dir, 'model.pt')
         )
         with open(os.path.join(self.res_dir, 'rewards.pkl'), 'wb') as f:  # save training data
             pickle.dump({'rewards': reward}, f)
 
     @classmethod
-    def load(cls, dim_info, file):
+    def load(cls, dim_info, file, vis = False):
         """init maddpg using the model saved in `file`"""
         instance = cls(dim_info, 0, 0, 0, 0, os.path.dirname(file))
         data = torch.load(file)
-        for agent_id, agent in instance.agents.items():
-            agent.AC_NNs.actor.load_state_dict(data[agent_id])
+        if vis: 
+            for agent_id, agent in instance.agents.items():
+                agent.AC_NNs.actor.load_state_dict(data[agent_id])
+        else:
+            for agent_id, agent in instance.agents.items():
+                agent.actor.load_state_dict(data[agent_id])
+
         return instance

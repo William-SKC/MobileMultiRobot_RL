@@ -1,0 +1,136 @@
+episode 100, agent_0: -25.254862; sum reward: -25.254862095142737
+episode 200, agent_0: -45.699163; sum reward: -45.69916317138062
+episode 300, agent_0: -71.333062; sum reward: -71.33306242908344
+episode 400, agent_0: -39.623446; sum reward: -39.623445554174
+episode 500, agent_0: -22.085857; sum reward: -22.085856633198052
+episode 600, agent_0: -20.914946; sum reward: -20.914945501131676
+episode 700, agent_0: -10.850334; sum reward: -10.850334043165075
+episode 800, agent_0: -3.538458; sum reward: -3.5384584285892444
+episode 900, agent_0: -2.333411; sum reward: -2.3334109531500777
+episode 1000, agent_0: -13.894621; sum reward: -13.894620914348485
+episode 1100, agent_0: -6.702223; sum reward: -6.702223240588401
+episode 1200, agent_0: -4.476784; sum reward: -4.476783670840873
+episode 1300, agent_0: -1.611260; sum reward: -1.6112600512290185
+episode 1400, agent_0: -6.664736; sum reward: -6.664736241143005
+episode 1500, agent_0: -0.602694; sum reward: -0.6026937210934933
+episode 1600, agent_0: -4.645421; sum reward: -4.645421291562685
+episode 1700, agent_0: -15.755835; sum reward: -15.75583491170819
+episode 1800, agent_0: -17.999414; sum reward: -17.99941423867099
+episode 1900, agent_0: -0.437582; sum reward: -0.43758217282039563
+episode 2000, agent_0: -8.462347; sum reward: -8.462347443628197
+episode 2100, agent_0: -2.895585; sum reward: -2.8955852380863125
+episode 2200, agent_0: -6.354833; sum reward: -6.354833383169101
+episode 2300, agent_0: -3.936532; sum reward: -3.9365323309992317
+episode 2400, agent_0: -6.051966; sum reward: -6.0519662843541555
+episode 2500, agent_0: -6.936031; sum reward: -6.9360309401470035
+episode 2600, agent_0: -1.388982; sum reward: -1.3889815636561766
+episode 2700, agent_0: -1.008036; sum reward: -1.0080356481812585
+episode 2800, agent_0: -3.654213; sum reward: -3.654212606042452
+episode 2900, agent_0: -6.493294; sum reward: -6.493294241795181
+episode 3000, agent_0: -7.735779; sum reward: -7.735779328303372
+episode 3100, agent_0: -4.310557; sum reward: -4.310557366201262
+episode 3200, agent_0: -14.065561; sum reward: -14.0655611162102
+episode 3300, agent_0: -2.537070; sum reward: -2.537069836453614
+episode 3400, agent_0: -5.280457; sum reward: -5.280456951834858
+episode 3500, agent_0: -0.860571; sum reward: -0.8605711442738602
+episode 3600, agent_0: -5.915863; sum reward: -5.915863213160557
+episode 3700, agent_0: -9.362517; sum reward: -9.362517205475072
+episode 3800, agent_0: -4.330158; sum reward: -4.330158422964663
+episode 3900, agent_0: -19.860654; sum reward: -19.860654352575853
+episode 4000, agent_0: -2.997103; sum reward: -2.997102639620361
+episode 4100, agent_0: -10.828806; sum reward: -10.828805770985714
+episode 4200, agent_0: -0.770923; sum reward: -0.7709233188817259
+episode 4300, agent_0: -1.903228; sum reward: -1.9032277560540278
+episode 4400, agent_0: -2.501251; sum reward: -2.501250657612909
+episode 4500, agent_0: -6.527857; sum reward: -6.52785698021951
+episode 4600, agent_0: -1.072196; sum reward: -1.072195938903815
+episode 4700, agent_0: -0.987077; sum reward: -0.9870767206528516
+episode 4800, agent_0: -3.011313; sum reward: -3.0113133043130262
+episode 4900, agent_0: -5.586901; sum reward: -5.586901100047171
+episode 5000, agent_0: -14.437016; sum reward: -14.43701642797093
+episode 5100, agent_0: -2.237761; sum reward: -2.237760889969126
+episode 5200, agent_0: -4.833651; sum reward: -4.833650799894894
+episode 5300, agent_0: -1.066114; sum reward: -1.0661135577152892
+episode 5400, agent_0: -4.774387; sum reward: -4.774386718233109
+episode 5500, agent_0: -5.899231; sum reward: -5.899231347228574
+episode 5600, agent_0: -9.256861; sum reward: -9.256860979853343
+episode 5700, agent_0: -2.783965; sum reward: -2.783965363250762
+episode 5800, agent_0: -9.420004; sum reward: -9.420003885675332
+episode 5900, agent_0: -8.105481; sum reward: -8.105481048431706
+episode 6000, agent_0: -2.769188; sum reward: -2.769187736235228
+episode 6100, agent_0: -0.298894; sum reward: -0.2988935938616651
+episode 6200, agent_0: -1.744856; sum reward: -1.7448558624529011
+episode 6300, agent_0: -1.087193; sum reward: -1.087192814923228
+episode 6400, agent_0: -1.851902; sum reward: -1.8519024641235604
+episode 6500, agent_0: -11.806488; sum reward: -11.806487767259362
+episode 6600, agent_0: -7.086488; sum reward: -7.086487908233715
+episode 6700, agent_0: -12.672744; sum reward: -12.672744430777149
+episode 6800, agent_0: -3.333567; sum reward: -3.33356675981343
+episode 6900, agent_0: -1.861224; sum reward: -1.861224249155427
+episode 7000, agent_0: -9.145886; sum reward: -9.145885601635236
+episode 7100, agent_0: -3.101778; sum reward: -3.101778341153696
+episode 7200, agent_0: -3.015934; sum reward: -3.015933643429276
+episode 7300, agent_0: -9.611156; sum reward: -9.611155670134327
+episode 7400, agent_0: -4.829274; sum reward: -4.829274231004924
+episode 7500, agent_0: -2.904121; sum reward: -2.9041207587966964
+episode 7600, agent_0: -5.607966; sum reward: -5.607965673706914
+episode 7700, agent_0: -3.694666; sum reward: -3.6946664881669258
+episode 7800, agent_0: -2.824587; sum reward: -2.8245871431185448
+episode 7900, agent_0: -3.121967; sum reward: -3.1219673676209156
+episode 8000, agent_0: -7.824314; sum reward: -7.824314049934678
+episode 8100, agent_0: -6.603299; sum reward: -6.603298804365579
+episode 8200, agent_0: -8.148578; sum reward: -8.148578219411526
+episode 8300, agent_0: -4.128792; sum reward: -4.128792091609597
+episode 8400, agent_0: -6.260592; sum reward: -6.260591979425472
+episode 8500, agent_0: -1.329210; sum reward: -1.3292099685686014
+episode 8600, agent_0: -2.630560; sum reward: -2.63056010940003
+episode 8700, agent_0: -1.114703; sum reward: -1.1147025727880857
+episode 8800, agent_0: -9.300177; sum reward: -9.30017730967268
+episode 8900, agent_0: -29.805747; sum reward: -29.805747024170582
+episode 9000, agent_0: -10.063508; sum reward: -10.063508408110817
+episode 9100, agent_0: -4.477723; sum reward: -4.477723123980154
+episode 9200, agent_0: -22.649869; sum reward: -22.649869401890264
+episode 9300, agent_0: -14.542569; sum reward: -14.542569397085899
+episode 9400, agent_0: -8.352928; sum reward: -8.35292781069467
+episode 9500, agent_0: -6.078728; sum reward: -6.078728409224591
+episode 9600, agent_0: -1.701671; sum reward: -1.7016709404004469
+episode 9700, agent_0: -6.800248; sum reward: -6.800248301072143
+episode 9800, agent_0: -1.907691; sum reward: -1.907690926164394
+episode 9900, agent_0: -1.631364; sum reward: -1.6313644473440372
+episode 10000, agent_0: -5.558142; sum reward: -5.558142089925372
+episode 10100, agent_0: -3.555031; sum reward: -3.55503095759683
+episode 10200, agent_0: -0.539719; sum reward: -0.5397194222736836
+episode 10300, agent_0: -7.066307; sum reward: -7.066306649200302
+episode 10400, agent_0: -9.045499; sum reward: -9.045499082293187
+episode 10500, agent_0: -1.150022; sum reward: -1.1500217145579215
+episode 10600, agent_0: -8.952693; sum reward: -8.952692883472157
+episode 10700, agent_0: -0.793388; sum reward: -0.793388409283826
+episode 10800, agent_0: -10.054860; sum reward: -10.054860001442028
+episode 10900, agent_0: -1.135921; sum reward: -1.1359205001330277
+episode 11000, agent_0: -5.513481; sum reward: -5.513480533843782
+episode 11100, agent_0: -0.767657; sum reward: -0.7676567307490307
+episode 11200, agent_0: -6.143535; sum reward: -6.143535416011175
+episode 11300, agent_0: -3.464591; sum reward: -3.4645905256950025
+Traceback (most recent call last):
+  File "/Users/shengkangchen/Documents/MobileMultiRobot_RL/MADDPG/main.py", line 97, in <module>
+    next_obs, reward, done, _, info = env.step(action)
+                                      ^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/pettingzoo/utils/conversions.py", line 214, in step
+    observations = {
+                   ^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/pettingzoo/utils/conversions.py", line 215, in <dictcomp>
+    agent: self.aec_env.observe(agent) for agent in self.aec_env.agents
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/pettingzoo/utils/wrappers/order_enforcing.py", line 101, in observe
+    return super().observe(agent)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/pettingzoo/utils/wrappers/base.py", line 41, in observe
+    return self.env.observe(agent)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/pettingzoo/utils/wrappers/base.py", line 41, in observe
+    return self.env.observe(agent)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pettingzoo_m4/lib/python3.11/site-packages/pettingzoo/mpe/_mpe_utils/simple_env.py", line 139, in observe
+    def observe(self, agent):
+
+KeyboardInterrupt

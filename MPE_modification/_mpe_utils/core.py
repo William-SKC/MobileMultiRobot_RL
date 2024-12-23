@@ -117,21 +117,29 @@ class World:  # multi-agent world
         return [agent for agent in self.agents if agent.action_callback is not None]
 
     # update state of the world
-    def step(self):
+    def step(self, force_based):
+        if force_based:
         # set actions for scripted agents
-        for agent in self.scripted_agents:
-            agent.action = agent.action_callback(agent, self)
-        # gather forces applied to entities
-        p_force = [None] * len(self.entities)
-        # apply agent physical controls
-        p_force = self.apply_action_force(p_force)
-        # apply environment forces
-        p_force = self.apply_environment_force(p_force)
-        # integrate physical state
-        self.integrate_state(p_force)
-        # update agent state
-        for agent in self.agents:
-            self.update_agent_state(agent)
+            for agent in self.scripted_agents:
+                agent.action = agent.action_callback(agent, self)
+            # gather forces applied to entities
+            p_force = [None] * len(self.entities)
+            # apply agent physical controls
+            p_force = self.apply_action_force(p_force)
+            # apply environment forces
+            p_force = self.apply_environment_force(p_force)
+            # integrate physical state
+            self.integrate_state(p_force)
+            # update agent state
+            for agent in self.agents:
+                self.update_agent_state(agent)
+        else:
+            for i, agent in enumerate(self.agents):
+                if agent.movable:
+                    agent.state.p_vel = agent.action.u
+                    agent.state.p_pos += agent.state.p_vel * self.dt
+                    if self.boundries:
+                        agent.state.p_pos = np.clip(agent.state.p_pos, self.boundries[0], self.boundries[1])
 
     # gather agent action forces
     def apply_action_force(self, p_force):

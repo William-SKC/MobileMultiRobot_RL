@@ -42,7 +42,8 @@ class SimpleEnv(AECEnv):
         render_mode=None,
         continuous_actions=False,
         local_ratio=None,
-        vis = False
+        vis = False,
+        force_based = True
     ):
         super().__init__()
 
@@ -56,7 +57,8 @@ class SimpleEnv(AECEnv):
         self.game_font = pygame.freetype.Font(
             os.path.join(os.path.dirname(__file__), "secrcode.ttf"), 24
         )
-        self.vis = vis 
+        self.vis = vis
+        self.force_based = force_based
 
         # Set up the drawing window
 
@@ -143,16 +145,19 @@ class SimpleEnv(AECEnv):
         if self.vis:
             observation = np.array(pygame.surfarray.pixels3d(self.screen)) # (W, H, 3)
             # print("observe: ", observation.shape)
-            observation =  np.transpose(observation, axes=(1, 0, 2))
+            observation = np.transpose(observation, axes=(1, 0, 2)) # (H, W, 3)
             agent_x = scenaro_obs[4]
             agent_y = scenaro_obs[5]
-            px, py = self.convert_to_pygame_coords(agent_x, agent_y) # (H, W, 3)
+            px, py = self.convert_to_pygame_coords(agent_x, agent_y)
             loc_obs_2d = np.zeros((self.height, self.width, 1))
-            # print(agent_x, agent_y, px, py)
-            # loc_obs_2d[px, py] = 1
-            row = (self.height - 1) - py
+            row = py
             col = px
             loc_obs_2d[row, col] = 1
+            # print(scenaro_obs)
+            # print(agent_x, agent_y, px, py, row, col)
+            # px, py = self.convert_to_pygame_coords(scenaro_obs[0], scenaro_obs[1])
+            # print(observation[py][px], observation[10][10])
+
             observation = np.concatenate((observation, loc_obs_2d), axis = 2) #(H, W, 4)
             # print("observe: ", observation.shape)
         else:
@@ -205,7 +210,7 @@ class SimpleEnv(AECEnv):
                 scenario_action.append(action)
             self._set_action(scenario_action, agent, self.action_spaces[agent.name])
 
-        self.world.step()
+        self.world.step(self.force_based)
 
         global_reward = 0.0
         if self.local_ratio is not None:
