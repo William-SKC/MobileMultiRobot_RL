@@ -136,7 +136,7 @@ class World:  # multi-agent world
         else:
             for i, agent in enumerate(self.agents):
                 if agent.movable:
-                    agent.state.p_vel = agent.action.u
+                    agent.state.p_vel = agent.action.u/5
                     agent.state.p_pos += agent.state.p_vel * self.dt
                     if self.boundries:
                         agent.state.p_pos = np.clip(agent.state.p_pos, self.boundries[0], self.boundries[1])

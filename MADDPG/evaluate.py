@@ -8,6 +8,9 @@ from PIL import Image
 from MADDPG import MADDPG
 from main import get_env
 
+vis_setting = False
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('env_name', type=str, default='simple_v3', help='name of the env',
@@ -25,9 +28,9 @@ if __name__ == '__main__':
         os.makedirs(gif_dir)
     gif_num = len([file for file in os.listdir(gif_dir)])  # current number of gif
 
-    env, dim_info = get_env(args.env_name, args.episode_length)
+    env, dim_info = get_env(args.env_name, vis_setting, args.episode_length)
     print("action_spaces: ", env.action_spaces)
-    maddpg = MADDPG.load(dim_info, os.path.join(model_dir, 'model.pt'))
+    maddpg = MADDPG.load(dim_info, os.path.join(model_dir, 'model.pt'), vis = vis_setting)
 
     agent_num = env.num_agents
     # reward of each episode of each agent

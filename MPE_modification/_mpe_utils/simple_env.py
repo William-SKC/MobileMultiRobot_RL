@@ -146,8 +146,8 @@ class SimpleEnv(AECEnv):
             observation = np.array(pygame.surfarray.pixels3d(self.screen)) # (W, H, 3)
             # print("observe: ", observation.shape)
             observation = np.transpose(observation, axes=(1, 0, 2)) # (H, W, 3)
-            agent_x = scenaro_obs[4]
-            agent_y = scenaro_obs[5]
+            agent_x = scenaro_obs[2]
+            agent_y = scenaro_obs[3]
             px, py = self.convert_to_pygame_coords(agent_x, agent_y)
             loc_obs_2d = np.zeros((self.height, self.width, 1))
             row = py

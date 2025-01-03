@@ -10,7 +10,7 @@ from MADDPG import MADDPG
 
 vis_setting = False
 
-def get_env(env_name, ep_len=25):
+def get_env(env_name, vis_setting = False, ep_len=25):
     """create environment and get observation and action dimension of each agent in this environment"""
     new_env = None
     if env_name == 'simple_adversary_v3':
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     os.makedirs(result_dir)
 
     #create environment for experiment
-    env, dim_info = get_env(args.env_name, args.episode_length)
+    env, dim_info = get_env(args.env_name, vis_setting, args.episode_length)
     print("dim_info: ", dim_info)
     
     # model
